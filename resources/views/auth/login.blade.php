@@ -11,30 +11,44 @@
             min-height: 100vh;
         }
 
-        .gradient-custom {
-            background: linear-gradient(to right, #ffafbd, #ffc3a0);
+        .gradient-custom-3 {
+            background: rgba(0, 0, 0, 0.5);
         }
 
-        .gradient-custom-2 {
-            background: #ff616d;
-            background: linear-gradient(to right, #ff616d, #ee9ca7);
+        .card {
+            border-radius: 15px;
+        }
+
+        .card-body {
+            padding: 1.5rem;
+        }
+
+        .form-label {
+            font-weight: bold;
+        }
+
+        .btn-lg {
+            font-size: 1rem;
+        }
+
+        .card-footer {
+            padding-top: 0;
         }
     </style>
 </head>
 <body>
-<section class="vh-100 bg-image"
-         style="background-image: url('assets/img/background.jpg');">
+<section class="vh-100 bg-image" style="background-image: url('assets/img/background.jpg');">
     <div class="mask d-flex align-items-center h-100 gradient-custom-3">
         <div class="container h-100">
             <div class="row d-flex justify-content-center align-items-center h-100">
-                <div class="col-12 col-md-9 col-lg-7 col-xl-6">
-                    <div class="card" style="border-radius: 15px;">
-                        <div class="card-body p-5">
+                <div class="col-xl-5 col-lg-12 col-md-9">
+                    <div class="card">
+                        <div class="card-body">
 
                             <div class="text-center">
                                 <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/lotus.webp"
-                                     style="width: 185px;" alt="logo">
-                                <h4 class="mt-1 mb-5 pb-1 font-weight-bold">Welcome Back</h4>
+                                     style="width: 150px;" alt="logo">
+                                <h1 class="h1 text-gray-900 mb-4 font-weight-bold">Welcome Back</h1>
                             </div>
 
                             @if(session()->has('pesan'))
@@ -46,23 +60,23 @@
                             <p>Silahkan Login Ke Akun Anda</p>
                             <form class="user" method="post" action="{{ route('auth.verify') }}">
                                 @csrf
-                                <div class="form-group">
-                                    <label class="form-label font-weight-bold" for="email">Email</label>
-                                    <input type="email" name="email" class="form-control" id="email" required>
+                                <div class="form-group mb-3">
+                                    <label class="form-label" for="email">Email</label>
+                                    <input type="email" name="email" class="form-control" placeholder="Masukkan Email Anda" id="email" required>
                                 </div>
-                                <div class="form-group">
-                                    <label class="form-label font-weight-bold" for="password">Password</label>
-                                    <input type="password" name="password" class="form-control" id="password" required>
+                                <div class="form-group mb-3">
+                                    <label class="form-label" for="password">Password</label>
+                                    <input type="password" name="password" class="form-control" placeholder="Masukkan Password" id="password" required>
                                 </div>
-                                <div class="form-check">
+                                <div class="form-check mb-3">
                                     <input type="checkbox" class="form-check-input" id="rememberMe">
                                     <label class="form-check-label" for="rememberMe">Remember me</label>
                                 </div>
                                 <div class="text-center">
-                                    <button type="submit" class="btn btn-lg btn-danger btn-user btn-block btn-lg w-100 mt-4 mb-0">Sign in</button>
+                                    <button type="submit" class="btn btn-danger btn-user btn-block w-100 mt-3 mb-0">Sign in</button>
                                 </div>
                             </form>
-                            <div class="d-flex align-items-center justify-content-center pb-4">
+                            <div class="d-flex align-items-center justify-content-center pt-3">
                                 <p class="mb-0 me-2">Belum Punya Akun?</p>
                                 <a href="{{ route('register') }}" class="text-danger text-gradient">Sign up</a>
                             </div>
